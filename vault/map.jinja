@@ -1,0 +1,15 @@
+# Get grain value
+{% set site = salt['grains.get']('site', '') %}
+
+# Variables
+{% set suffix = "''" %}
+{% set role_id = salt['pillar.get']('vault:role_id', '') %}
+{% set secret_id = salt['pillar.get']('vault:secret_id', '') %
+
+{% if site == 'psm' %}
+  {% set suffix = "''" %}
+{% elif site == 'test' %}
+  {% set suffix = 'test' %}
+{% else %}
+  {% set suffix = "''" %}
+{% endif %}

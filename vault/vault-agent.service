@@ -1,0 +1,12 @@
+[Unit]
+Description="Vault Agent to serve Tokens"
+ 
+[Service]
+User=root
+WorkingDirectory=/etc/vault.d
+ExecStart=/usr/local/bin/vault agent -config=/etc/vault.d/config.hcl
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
+

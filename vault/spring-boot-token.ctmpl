@@ -1,0 +1,6 @@
+{% raw %}
+{{with secret "/auth/token/create/spring-boot{% endraw %}{{ suffix }}"{% raw %} "role=spring-boot" -}}
+VAULT_TOKEN={{.Auth.ClientToken}}
+{{- end }}
+{% endraw %}
+
